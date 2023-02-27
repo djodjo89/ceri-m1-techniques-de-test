@@ -1,13 +1,10 @@
 package fr.univavignon.pokedex.api;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.BeforeAll;
 import org.mockito.Mockito;
 
 public class IPokemonFactoryTest {
-  static IPokemonMetadataProvider mockedProvider;
   @Test public void testCreatePokemon() {
     IPokemonFactory mockedFactory = Mockito.mock(IPokemonFactory.class);
     Pokemon charizard = new Pokemon(6, "charizard", 84, 78, 100, 3000, 78, 8000, 8, 100.0);
@@ -30,5 +27,4 @@ public class IPokemonFactoryTest {
     assertEquals(100.0, expectedPokemon.getIv());
   }
 }
-
 
