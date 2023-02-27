@@ -20,7 +20,7 @@ public class IPokemonMetadataProviderTest {
     assertEquals(expectedPokemonMetadata, bulbasaurMetadata);
     Mockito.verify(mockedProvider).getPokemonMetadata(1);
   }
-  @Test public void testGetInnexistantPokemonMetadata() throws PokedexException {
+  @Test public void testGetInexistantPokemonMetadata() throws PokedexException {
     Mockito.when(mockedProvider.getPokemonMetadata(722)).thenThrow(new PokedexException("ce pokemon n’existe pas encore"));
 
     assertThrows(PokedexException.class, () -> {
