@@ -1,5 +1,17 @@
 # UCE Génie Logiciel Avancé : Techniques de tests
 
+## Badges
+
+Salut !
+Je suis Mathys Simion, étudiant en M1 IA en alternance au CERI
+
+[![codecov](https://codecov.io/github/djodjo89/ceri-m1-techniques-de-test/branch/master/graph/badge.svg?token=B0LGXPGLQ7)](https://codecov.io/github/djodjo89/ceri-m1-techniques-de-test)
+[![circleci](https://circleci.com/gh/djodjo89/ceri-m1-techniques-de-test.svg?style=svg)](https://app.circleci.com/pipelines/github/djodjo89)
+
+## Documentation
+
+Ce projet utilise des Factory pour créer facilement des Pokémon
+
 ## Introduction
 
 Vous allez à travers ces projet mettre en application une partie des aspects évoqués en cours vis à vis des techniques de tests.  
