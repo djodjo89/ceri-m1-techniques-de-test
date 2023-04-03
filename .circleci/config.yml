@@ -28,6 +28,9 @@ jobs:
       - run:
           name: Test
           command: mvn test
+      - run:
+          name: Generate Reports
+          command: mvn verify
       - codecov/upload
 
 # Invoke jobs via workflows
