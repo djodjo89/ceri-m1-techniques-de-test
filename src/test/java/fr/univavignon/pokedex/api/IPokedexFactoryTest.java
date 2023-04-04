@@ -12,11 +12,12 @@ public class IPokedexFactoryTest {
     IPokemonMetadataProvider mockedProvider = Mockito.mock(IPokemonMetadataProvider.class);
     
     Mockito.when(mockedPokedexFactory.createPokedex(mockedProvider, mockedPokemonFactory)).thenReturn(mockedPokedex);
+    Mockito.when(mockedPokedex.size()).thenReturn(0);
 
     IPokedex actual = mockedPokedexFactory.createPokedex(mockedProvider, mockedPokemonFactory);
 
-    assertEquals(actual, mockedPokedex);
-    Mockito.verify(mockedPokedexFactory).createPokedex(mockedProvider, mockedPokemonFactory);
+    assertEquals(0, mockedPokedex.size());
+    Mockito.verify(mockedPokedex).size();
   }
 }
 
