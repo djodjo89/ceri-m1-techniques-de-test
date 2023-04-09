@@ -2,30 +2,28 @@ package fr.univavignon.pokedex.api;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import java.util.HashSet;
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeAll;
-import org.mockito.Mockito;
 
 public class IPokemonMetadataProviderTest {
-  static IPokemonMetadataProvider mockedProvider;
+  static PokemonMetadataProvider provider;
   @BeforeAll public static void initialize() {
-    mockedProvider = Mockito.mock(IPokemonMetadataProvider.class);
+    provider = new PokemonMetadataProvider(
+        new HashSet<PokemonMetadata>(List.of(
+            new PokemonMetadata(1, "bulbasaur", 49, 49, 45)
+        )));
   }
   @Test public void testGetPokemonMetadata() throws PokedexException {
-    PokemonMetadata bulbasaurMetadata = new PokemonMetadata(1, "Bulbasaur", 49, 49, 45);
-    Mockito.when(mockedProvider.getPokemonMetadata(1)).thenReturn(bulbasaurMetadata);
-
-    PokemonMetadata actual = mockedProvider.getPokemonMetadata(1);
-
-    assertEquals(actual, bulbasaurMetadata);
-    Mockito.verify(mockedProvider).getPokemonMetadata(1);
+    PokemonMetadata actual = provider.getPokemonMetadata(1);
+    assertEquals("bulbasaur", actual.getName());
   }
   @Test public void testGetNonexistentPokemonMetadata() throws PokedexException {
-    Mockito.when(mockedProvider.getPokemonMetadata(722)).thenThrow(new PokedexException("ce pokemon n’existe pas encore"));
-
     assertThrows(PokedexException.class, () -> {
-      mockedProvider.getPokemonMetadata(722);
+      provider.getPokemonMetadata(722);
     });
-    Mockito.verify(mockedProvider).getPokemonMetadata(722);
   }
 }

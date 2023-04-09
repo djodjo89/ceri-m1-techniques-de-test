@@ -1,20 +1,25 @@
 package fr.univavignon.pokedex.api;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.util.HashSet;
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
 public class IPokemonFactoryTest {
-  @Test public void testCreatePokemon() {
-    IPokemonFactory mockedFactory = Mockito.mock(IPokemonFactory.class);
-    Pokemon charizard = new Pokemon(6, "charizard", 84, 78, 100, 3000, 78, 8000, 8, 100.0);
-    Mockito.when(mockedFactory.createPokemon(6, 3000, 78, 8000, 8)).thenReturn(charizard);
+  @Test public void testCreatePokemon() throws PokedexException {
+    final IPokemonMetadataProvider provider = new PokemonMetadataProvider(
+        new HashSet<PokemonMetadata>(List.of(
+            new PokemonMetadata(6, "charizard", 84, 78, 100)
+        )));
+    final IPokemonFactory factory = new PokemonFactory(provider);
+    final Pokemon charizard = new Pokemon(6, "charizard", 84, 78, 100, 3000, 78, 8000, 8, 100.0);
 
-    Pokemon actual = mockedFactory.createPokemon(6, 3000, 78, 8000, 8);
+    final Pokemon actual = factory.createPokemon(6, 3000, 78, 8000, 8);
 
-    assertEquals(charizard, actual);
-    Mockito.verify(mockedFactory).createPokemon(6, 3000, 78, 8000, 8);
-
+    assertEquals(charizard.getIndex(), actual.getIndex(), "createPokemon should create a charizard");
     assertEquals(6, actual.getIndex());
     assertEquals("charizard", actual.getName());
     assertEquals(84, actual.getAttack());
@@ -24,7 +29,7 @@ public class IPokemonFactoryTest {
     assertEquals(78, actual.getHp());
     assertEquals(8000, actual.getDust());
     assertEquals(8, actual.getCandy());
-    assertEquals(100.0, actual.getIv());
+    assertTrue(actual.getIv() > 0.0 && actual.getIv() <= 100.0);
   }
 }
 

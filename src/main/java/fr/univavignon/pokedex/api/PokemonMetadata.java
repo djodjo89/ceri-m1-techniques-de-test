@@ -38,6 +38,12 @@ public class PokemonMetadata {
 		this.defense = defense;
 		this.stamina = stamina;
 	}
+
+	/** Equals function, two PokemonMetadata with the same index are identical. **/
+	public boolean equals(Object other) {
+		if (other == null) return false;
+		return getIndex() == ((PokemonMetadata) other).getIndex();
+	}
 	
 	/** Index getter. **/
 	public int getIndex() {
