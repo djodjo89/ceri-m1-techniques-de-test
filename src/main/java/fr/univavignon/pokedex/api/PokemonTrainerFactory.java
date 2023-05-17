@@ -9,6 +9,12 @@ public class PokemonTrainerFactory implements PokemonTrainerFactoryInterface {
   private PokemonMetadataProviderInterface provider;
   private PokemonFactoryInterface factory;
 
+  /**
+   * Default constructor.
+   *
+   * @param provider PokemonMetadataProviderInterface provider.
+   * @param factory PokemonFactoryInterface factory.
+   */
   public PokemonTrainerFactory(
       PokemonMetadataProviderInterface provider, PokemonFactoryInterface factory) {
     this.provider = provider;

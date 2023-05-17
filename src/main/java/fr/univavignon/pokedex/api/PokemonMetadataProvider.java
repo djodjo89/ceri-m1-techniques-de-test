@@ -11,6 +11,12 @@ public class PokemonMetadataProvider implements PokemonMetadataProviderInterface
   private HashSet<PokemonMetadata> metadatas;
   private static int NB_MAX_POKEMON_METADATA = 151;
 
+  /**
+   * Creates a new pokemon metadata provider using the given
+   * <code>metadatas</code>.
+   *
+   * @param metadatas metadatas to provide.
+   */
   public PokemonMetadataProvider(HashSet<PokemonMetadata> metadatas) {
     this.metadatas = metadatas;
   }
@@ -28,8 +34,7 @@ public class PokemonMetadataProvider implements PokemonMetadataProviderInterface
   @Override
   public PokemonMetadata getPokemonMetadata(int index) throws PokedexException {
     throwExceptionIfIsIndexInvalid(index);
-    PokemonMetadata metadata =
-        metadatas.stream().filter(m -> m.getIndex() == index).findAny().orElse(null);
+    PokemonMetadata metadata = metadatas.stream().filter(m -> m.getIndex() == index).findAny().orElse(null);
     if (metadata != null) {
       return metadata;
     }

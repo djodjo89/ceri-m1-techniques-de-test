@@ -42,7 +42,7 @@ public class Pokedex implements PokedexInterface {
   }
 
   /**
-   * Add the pokemon denoted by the given <tt>index</tt> to the Pokedex.
+   * Add the pokemon denoted by the given <code>index</code> to the Pokedex.
    *
    * @param pokemon Pokemon to add.
    * @return index Index of the added pokemon.
@@ -54,11 +54,11 @@ public class Pokedex implements PokedexInterface {
   }
 
   /**
-   * Retrieves the pokemon denoted by the given <tt>id</tt>.
+   * Retrieves the pokemon denoted by the given <code>id</code>.
    *
    * @param id Index of the pokemon to retrieve.
    * @return the Pokemon.
-   * @throws PokedexException If the given <tt>id</tt> is not valid.
+   * @throws PokedexException If the given <code>id</code> is not valid.
    */
   @Override
   public Pokemon getPokemon(int id) throws PokedexException {

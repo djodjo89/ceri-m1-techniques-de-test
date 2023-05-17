@@ -8,6 +8,11 @@ package fr.univavignon.pokedex.api;
 public class PokemonFactory implements PokemonFactoryInterface {
   private PokemonMetadataProviderInterface provider;
 
+  /**
+   * Default constructor.
+   *
+   * @param provider PokemonMetadataProviderInterface provider.
+   */
   public PokemonFactory(PokemonMetadataProviderInterface provider) {
     this.provider = provider;
   }
