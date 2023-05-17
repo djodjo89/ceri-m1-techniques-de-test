@@ -97,12 +97,17 @@
               <include>src/main/java/**/*.java</include>
               <include>src/test/java/**/*.java</include>
             </includes>
+            <googleJavaFormat>
+              <version>1.10.0</version>
+              <style>AOSP</style>
+            </googleJavaFormat>
             <!--
             <eclipse>
               <version>4.26</version>
               <setting id="org.eclipse.jdt.core.formatter.comment.line_length" value="80" />
             </eclipse>
             -->
+            <!--
             <prettier>
               <nodeExecutable>/home/jo/n/bin/node</nodeExecutable>
               <npmrc>/mnt/c/r/d/k/m1/s2/tes/p/5/ceri-m1-techniques-de-test/.npmrc</npmrc>
@@ -125,6 +130,7 @@
               <spacesPerTab>4</spacesPerTab>
             </indent>
             <palantirJavaFormat />
+            -->
           </java>
         </configuration>
         <!--

@@ -7,89 +7,93 @@ package fr.univavignon.pokedex.api;
  */
 public class PokemonMetadata {
 
-  /** Pokemon index. * */
-  private final int index;
+    /** Pokemon index. * */
+    private final int index;
 
-  /** Pokemon name. * */
-  private final String name;
+    /** Pokemon name. * */
+    private final String name;
 
-  /** Pokemon attack level. * */
-  private final int attack;
+    /** Pokemon attack level. * */
+    private final int attack;
 
-  /** Pokemon defense level. * */
-  private final int defense;
+    /** Pokemon defense level. * */
+    private final int defense;
 
-  /** Pokemon stamina level. * */
-  private final int stamina;
+    /** Pokemon stamina level. * */
+    private final int stamina;
 
-  /**
-   * Default constructor.
-   *
-   * @param index   Pokemon index.
-   * @param name    Pokemon name.
-   * @param attack  Attack level.
-   * @param defense Defense level.
-   * @param stamina Stamina level.
-   */
-  public PokemonMetadata(
-      final int index, final String name, final int attack, final int defense, final int stamina) {
-    this.index = index;
-    this.name = name;
-    this.attack = attack;
-    this.defense = defense;
-    this.stamina = stamina;
-  }
-
-  /** Equals function, two PokemonMetadata with the same index are identical. * */
-  public boolean equals(Object other) {
-    if (other == null) {
-      return false;
+    /**
+     * Default constructor.
+     *
+     * @param index Pokemon index.
+     * @param name Pokemon name.
+     * @param attack Attack level.
+     * @param defense Defense level.
+     * @param stamina Stamina level.
+     */
+    public PokemonMetadata(
+            final int index,
+            final String name,
+            final int attack,
+            final int defense,
+            final int stamina) {
+        this.index = index;
+        this.name = name;
+        this.attack = attack;
+        this.defense = defense;
+        this.stamina = stamina;
     }
-    return getIndex() == ((PokemonMetadata) other).getIndex();
-  }
 
-  /**
-   * Index getter.
-   * 
-   * @return int
-   */
-  public int getIndex() {
-    return index;
-  }
+    /** Equals function, two PokemonMetadata with the same index are identical. * */
+    public boolean equals(Object other) {
+        if (other == null) {
+            return false;
+        }
+        return getIndex() == ((PokemonMetadata) other).getIndex();
+    }
 
-  /**
-   * Name getter.
-   * 
-   * @return String
-   */
-  public String getName() {
-    return name;
-  }
+    /**
+     * Index getter.
+     *
+     * @return int
+     */
+    public int getIndex() {
+        return index;
+    }
 
-  /**
-   * Attack level getter.
-   * 
-   * @return int
-   */
-  public int getAttack() {
-    return attack;
-  }
+    /**
+     * Name getter.
+     *
+     * @return String
+     */
+    public String getName() {
+        return name;
+    }
 
-  /**
-   * Defense level getter.
-   * 
-   * @return int
-   */
-  public int getDefense() {
-    return defense;
-  }
+    /**
+     * Attack level getter.
+     *
+     * @return int
+     */
+    public int getAttack() {
+        return attack;
+    }
 
-  /**
-   * Stamina level getter.
-   * 
-   * @return int
-   */
-  public int getStamina() {
-    return stamina;
-  }
+    /**
+     * Defense level getter.
+     *
+     * @return int
+     */
+    public int getDefense() {
+        return defense;
+    }
+
+    /**
+     * Stamina level getter.
+     *
+     * @return int
+     */
+    public int getStamina() {
+        return stamina;
+    }
 }
