@@ -34,4 +34,4 @@ workflows:
               only:
                 - master
                 - tp4-100-%-iv
-                - tp5-bulbapedia
+                - tp5-doc

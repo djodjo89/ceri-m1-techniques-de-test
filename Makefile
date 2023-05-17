@@ -7,4 +7,4 @@ rapport:
 format:
 	mvn spotless:apply
 docs:
-	mvn javadoc:javadoc
+	mvn javadoc:javadoc;cp target/site/apidocs/* -r docs
